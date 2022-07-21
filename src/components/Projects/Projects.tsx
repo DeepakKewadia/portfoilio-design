@@ -20,21 +20,37 @@ import { CgFileRemove } from "react-icons/cg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 import "swiper/css";
+
 const Projects = () => {
   SwiperCore.use([Autoplay]);
+
   const slideStyle = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
   };
+
+  const icons = [
+    [<FaHtml5 className="slideicon" />, "HTML"],
+    [<FaCss3Alt className="slideicon" />, "CSS"],
+    [<SiJavascript className="slideicon" />, "Javascript"],
+    [<SiTypescript className="slideicon" />, "Typescript"],
+    [<SiPython className="slideicon" />, "Python"],
+    [<FaReact className="slideicon" />, "Reactjs"],
+    [<TbBrandNextjs className="slideicon" />, "Nextjs"],
+    [<SiTailwindcss className="slideicon" />, "Tailwind Css"],
+    [<FaDocker className="slideicon" />, "Docker"],
+    [<FaNodeJs className="slideicon" />, "Nodejs"],
+    [<DiMongodb className="slideicon" />, "Mongodb"],
+  ];
   return (
     <section
-      className="projects snap-start w-full h-screen container bg-[#474555] pt-6"
+      className="projects snap-start w-full h-full container bg-[#474555] pt-6"
       id="project"
     >
       <div className="flex flex-col mx-12 space-y-8">
         <h1 className="font-playfair text-4xl text-white border-b-2 pb-2">
-          Projects
+          Projects, I've Worked On
         </h1>
         <div className="projectContainer flex justify-between w-full ">
           <ProjectCard
@@ -63,55 +79,25 @@ const Projects = () => {
           />
         </div>
         <div className="skill">
+          <p className="text-2xl text-white font-playfair border-white pb-2 border-b-2">
+            Tech Stack, That i like :-
+          </p>
           <Swiper
             loop
-            autoplay={{ delay: 2000 }}
+            autoplay={{ delay: 2500 }}
             slidesPerView={5}
-            className="mt-16"
+            className="mt-8"
           >
-            <SwiperSlide style={slideStyle}>
-              <FaReact className="slideicon" />
-            </SwiperSlide>
-
-            <SwiperSlide style={slideStyle}>
-              <TbBrandNextjs className="slideicon" />
-            </SwiperSlide>
-
-            <SwiperSlide style={slideStyle}>
-              <FaNodeJs className="slideicon" />
-            </SwiperSlide>
-
-            <SwiperSlide style={slideStyle}>
-              <FaHtml5 className="slideicon" />
-            </SwiperSlide>
-
-            <SwiperSlide style={slideStyle}>
-              <FaCss3Alt className="slideicon" />
-            </SwiperSlide>
-
-            <SwiperSlide style={slideStyle}>
-              <SiJavascript className="slideicon" />
-            </SwiperSlide>
-
-            <SwiperSlide style={slideStyle}>
-              <SiTypescript className="slideicon" />
-            </SwiperSlide>
-
-            <SwiperSlide style={slideStyle}>
-              <SiPython className="slideicon" />
-            </SwiperSlide>
-
-            <SwiperSlide style={slideStyle}>
-              <FaDocker className="slideicon" />
-            </SwiperSlide>
-
-            <SwiperSlide style={slideStyle}>
-              <DiMongodb className="slideicon" />
-            </SwiperSlide>
-
-            <SwiperSlide style={slideStyle}>
-              <SiTailwindcss className="slideicon" />
-            </SwiperSlide>
+            {icons.map((icon, key) => {
+              return (
+                <SwiperSlide style={slideStyle}>
+                  <div className="flex flex-col justify-center space-y-2">
+                    {icon[0]}
+                    <p className="text-[#ABA9BB] text-center">{icon[1]}</p>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       </div>

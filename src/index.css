@@ -11,6 +11,6 @@
 }
 @layer components {
   .slideicon {
-    @apply text-8xl text-[#ABA9BB];
+    @apply text-6xl text-[#ABA9BB];
   }
 }
