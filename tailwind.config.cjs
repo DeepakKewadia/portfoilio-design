@@ -7,6 +7,9 @@ module.exports = {
       montserrat: ["Montserrat", "sans-serif"],
       playfair: ["Playfair Display", "serif"],
     },
+    backgroundImage: {
+      galaxy: "url('./src/assets/5471985.jpg')",
+    },
   },
   plugins: [],
 };

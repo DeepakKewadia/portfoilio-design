@@ -9,3 +9,8 @@
     font-family: "Montserrat", sans-serif;
   }
 }
+@layer components {
+  .slideicon {
+    @apply text-8xl text-[#ABA9BB];
+  }
+}
